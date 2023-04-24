@@ -19,6 +19,7 @@ RUN apk add nodejs \
 RUN ln -s /usr/bin/nvim /usr/local/bin/vim
 
 RUN npm install -g intelephense \
+                   typescript \
                    typescript-language-server \
                    dockerfile-language-server-nodejs
 
