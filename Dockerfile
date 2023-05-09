@@ -1,8 +1,8 @@
 FROM alpine
 
 RUN apk add nodejs \
-            ruby \
-            ruby-dev \
+            # ruby \
+            # ruby-dev \
             php \
             neovim \
             tmux \
@@ -23,7 +23,7 @@ RUN npm install -g intelephense \
                    typescript-language-server \
                    dockerfile-language-server-nodejs
 
-RUN gem install solargraph
+# RUN gem install solargraph
 
 WORKDIR /root
 
