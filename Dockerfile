@@ -1,8 +1,8 @@
 FROM alpine
 
 RUN apk add nodejs \
-            # ruby \
-            # ruby-dev \
+            ruby \
+            ruby-dev \
             php \
             neovim \
             tmux \
@@ -23,7 +23,7 @@ RUN npm install -g intelephense \
                    typescript-language-server \
                    dockerfile-language-server-nodejs
 
-# RUN gem install solargraph
+RUN gem install solargraph
 
 WORKDIR /root
 
@@ -35,8 +35,8 @@ RUN git clone https://github.com/tysteiman/dot && \
     rm -rf ~/dot
 
 # install packer
-RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim && \
-    nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+# RUN git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim && \
+#     nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
 RUN git config --global --add safe.directory /code
 
